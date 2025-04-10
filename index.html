@@ -38,14 +38,7 @@
 </head>
 <body class="bg-gray-900 text-white font-sans">
   <div id="loading" class="loading-screen">
-    <p>Loading software...</p>
-    <p>Connecting to 1xBet database...</p>
-    <p>Injecting prediction modules...</p>
-    <p>Hacking Aviator ✅</p>
-    <p>Hacking Mines ✅</p>
-    <p>Hacking Penalty ✅</p>
-    <p>Hacking Roulette, Dice, Crash, Plinko, Keno, Goal, Lucky Jet... ✅</p>
-    <p class="mt-4">Initialization complete ✅</p>
+    <p>Loading... Please wait while we set up your experience.</p>
   </div>
 
   <div id="mainContent" class="hidden-screen">
@@ -125,38 +118,15 @@
   </div>
 
   <script>
-    const messages = [
-      '[INFO] Fetching data from 1xBet API...',
-      '[INFO] Signal fetch interval: 15 seconds',
-      '[STATUS] Aviator: Connected',
-      '[STATUS] Mines: Connected',
-      '[STATUS] Penalty: Connected',
-      '[INFO] Last signal accuracy: 97.8%',
-      '[SECURITY] Anti-ban system: ACTIVE 🔒',
-      '[DATA] Prediction module running...',
-      '[INFO] Scanning game outcomes...',
-      '[SUCCESS] Data match found, prediction sent ✅'
-    ];
-    const consoleBox = document.getElementById("console");
-    let messageIndex = 0;
-    const consoleInterval = setInterval(() => {
-      const p = document.createElement("p");
-      p.textContent = messages[messageIndex];
-      consoleBox.appendChild(p);
-      consoleBox.scrollTop = consoleBox.scrollHeight;
-      messageIndex++;
-      if (messageIndex >= messages.length) {
-        clearInterval(consoleInterval);
-        setTimeout(() => {
-          window.location.href = 'https://1xbet.com/your_affiliate_link'; // Redirect to main page
-        }, 2000);
-      }
-    }, 1000);
+    // Automatically show main content after a delay
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden-screen");
+      document.getElementById("mainContent").classList.remove("hidden-screen");
+    }, 3000); // 3 seconds delay for loading
 
     // Show error on button click
     document.getElementById("startButton").addEventListener("click", () => {
-      document.getElementById("loading").classList.remove("hidden-screen");
-      document.getElementById("mainContent").classList.add("hidden-screen");
+      document.getElementById("errorBox").classList.remove("hidden");
     });
   </script>
 </body>
